@@ -78,10 +78,20 @@
             document.querySelector("#post").value = desenvolvedores.join(";");
             pesquisaDesenvolvedores();
         }
+        
+        function adicionarFile(){
+            var nfiles = document.querySelector("#nfiles");
+            var files = document.querySelector("#files");
+            files.innerHTML += `
+                <br>
+                <input type="file" name="file${nfiles.value}" id="file${nfiles.value}">
+            `;
+            document.querySelector("#nfiles").value = (Number(nfiles.value) + 1) + "";
+        }
         var tof = true;
         var desenvolvedores = [];
     </script>
-    <form action="visualizacao.php" method="post">
+    <form action="visualizacao.php" method="post" enctype="multipart/form-data">
         <label for="nome_projetos">Nome:</label>
         <input type="text" id="nome_projetos" name="nome"><br>
         <label for="descricao_projetos">Descrição:</label>
@@ -119,6 +129,15 @@
             <option value="3">3º ano</option>
             <option value="4">4º ano</option>
         </select>
+        <br>
+        <label for="link">Link</label>
+        <input type="text" name="link" id="link_projetos">
+        <div id="files">
+            <label for="file">Imagens/Vídeos:</label>
+            <input type="hidden" name="nfiles" id="nfiles" value="1">
+            <input type="file" name="file0" id="file0">
+        </div>
+        <div onclick="adicionarFile()">+</div>
         <br>
         <button type="submit" name="cadastro">Cadastrar</button>
     </form>
