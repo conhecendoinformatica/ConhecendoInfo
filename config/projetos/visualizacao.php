@@ -26,7 +26,7 @@
             $id = $linha['id'];
             for($i = 0; $i < $nfiles; $i++){
                 if (!empty($_FILES['file'.$i]['name'])) {
-                    $fileName = basename($_FILES["arquivo"]["name"]);
+                    $fileName = basename($_FILES['file'.$i]["name"]);
                 
                     $fileNameModified = date("YmdHis").$fileName;
             
@@ -38,7 +38,7 @@
                     $allowTypes = array('jpg','png','jpeg','gif','mp4','mov','avi','webm'); 
                     if(in_array($fileType, $allowTypes)){ 
                         // Upload file to server 
-                        if(move_uploaded_file($_FILES['arquivo']["tmp_name"], $targetFilePath)){ 
+                        if(move_uploaded_file($_FILES['file'.$i]["tmp_name"], $targetFilePath)){ 
                             // Insert image file name into database 
                                 $query = "INSERT INTO arquivos(endereco) VALUES ('$fileNameModified')";
                                 mysqli_query($conexao,$query);
@@ -55,10 +55,13 @@
                 }
             }
             for($i = 0; $i < count($desenvolvedores); $i++){
+                $query = "SELECT count(*) as linhas FROM membros WHERE nome = '".$desenvolvedores[$i]."' and cargo = 'aluno'";
+                $result = mysqli_query($conexao,$query);
+                $result2 = mysqli_fetch_array($result, MYSQLI_ASSOC);
                 $query = "SELECT id FROM membros WHERE nome = '".$desenvolvedores[$i]."' and cargo = 'aluno'";
                 $result = mysqli_query($conexao,$query);
-                if($result['num_rows']==0){
-                    $query = "INSERT INTO membros(nome,cargo) VALUES ('".$desenvolvedores[$i]."','docente');";
+                if($result2['linhas']==0){
+                    $query = "INSERT INTO membros(nome,cargo) VALUES ('".$desenvolvedores[$i]."','aluno');";
                     mysqli_query($conexao,$query);
                     $query = "SELECT id FROM membros ORDER BY 1 desc LIMIT 1";
                     $result = mysqli_query($conexao,$query);
@@ -78,11 +81,27 @@
                 mysqli_query($conexao,$query);
             }     
         }
+
+        if(isset($_POST['id_remover'])){
+            $projeto_removido = $_POST["id_remover"];
+            $query_remover = "DELETE FROM projeto_arquivo WHERE projeto = $projeto_removido";
+            mysqli_query($conexao,$query_remover);
+            $query_remover = "DELETE FROM projeto_membro WHERE projeto = $projeto_removido";
+            mysqli_query($conexao,$query_remover);
+            $query_remover = "DELETE FROM projeto_disciplina WHERE projeto = $projeto_removido";
+            mysqli_query($conexao,$query_remover);
+            $query_remover = "DELETE FROM projetos WHERE id = $projeto_removido";
+            mysqli_query($conexao,$query_remover);
+        }
+
         $query = "SELECT * FROM projetos;";
-        $result = mysqli_query($conexao,$query);
-        while($linha = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+        $projetos = mysqli_query($conexao,$query);
+        while($linha = mysqli_fetch_array($projetos, MYSQLI_ASSOC)) {
             $query = "SELECT membros.id as id, membros.nome as nome FROM membros JOIN projeto_membro ON membros.id = projeto_membro.membro WHERE projeto_membro.projeto = ".$linha['id'].";";
             $desenvolvedores = mysqli_query($conexao,$query);
+            $query = "SELECT count(*) as linhas FROM membros JOIN projeto_membro ON membros.id = projeto_membro.membro WHERE projeto_membro.projeto = ".$linha['id'].";";
+            $result = mysqli_query($conexao,$query);
+            $quantidade = mysqli_fetch_array($result, MYSQLI_ASSOC);
             $query = "SELECT arquivos.id as id, arquivos.endereco as endereco FROM arquivos JOIN projeto_arquivo ON arquivos.id = projeto_arquivo.arquivo WHERE projeto_arquivo.projeto = ".$linha['id'].";";
             $arquivos = mysqli_query($conexao,$query);
             if($linha['tipo'] == 'disciplina'){
@@ -91,8 +110,60 @@
                 $disciplina = mysqli_fetch_array($resultado, MYSQLI_ASSOC);
             }
     ?>
+    Nome:<?=$linha['nome']?> <br>
+    Descrição:<?=$linha['descricao']?> <br>
+    Tipo:<?=ucfirst($linha['tipo'])?> <br>
+    <?php 
+            if(isset($disciplina)){
+    ?>
+    Disciplina: <?=$disciplina?> <br>
+    <?php 
+            }
+    ?>
+    Ano: <?=$linha['ano']?> <br>
+    Ano escolar: <?=$linha['ano_escolar']?>º Ano <br>
+    <?php 
+            if($quantidade['linhas']==1){
+                $desenvolvedor = mysqli_fetch_array($desenvolvedores, MYSQLI_ASSOC);
+    ?>
+    Desenvolvedor: <?=$desenvolvedor['nome']?>
+    <?php 
+            }
+            else{
+    ?>
+    Desenvolvedores: 
+    <?php 
+                while($desenvolvedor = mysqli_fetch_array($desenvolvedores, MYSQLI_ASSOC)){
+    ?>
+    <?=$desenvolvedor['nome']?>,
+    <?php 
+                }
+    ?>
+    <br>
+    <?php
+            }
+            if($linha['link']!=""){
+    ?>
+    Link:<?=$linha['link']?> <br>
+    <?php 
+            }
+    ?>
+    Arquivos: <br>
+    <?php 
+            while($arquivo = mysqli_fetch_array($arquivos, MYSQLI_ASSOC)){
+    ?>
+    <img src="../../uploads/<?=$arquivo['endereco']?>" width="100">
+    <?php 
+            }
+    ?>
+    <br>
+    <form action="visualizacao.php" method="post">
+        <button type="submit" name="id_remover" value="<?=$linha['id']?>">Deletar</button>
+    </form>
     <?php 
         }
     ?>
+    <br>
+    <br>
 </body>
 </html>

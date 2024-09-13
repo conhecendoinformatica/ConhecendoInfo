@@ -1,0 +1,100 @@
+/* fonte padrao */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+/* fonte destaque */
+@import url('https://fonts.googleapis.com/css2?family=Homenaje&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background-color: #EEEEEE;
+}
+
+.banner-index{
+    background-image: url('img/banner-index.png');
+    height: 650px;
+}
+
+.logo{
+    color: white;
+    position: absolute;
+}
+
+.simbolo{
+    font-size: 3.5rem;
+    font-family: "Inter", sans-serif;
+    font-weight: 100;
+    left: 5px;
+}
+
+.titulo{
+    font-size: 1rem;
+    font-family: "Homenaje", sans-serif;
+}
+
+.fonte-destaque {
+    font-family: "Homenaje", sans-serif;
+}  
+
+.botao-index {
+    font-family: "Inter", sans-serif;
+    border-radius: 0.2rem;
+    background-color: #98C1D9;
+    padding: 0.5rem;
+    border: none;
+}
+
+.botao-index:hover {
+    background-color: #cce7f7;
+}
+
+.titulo-banner-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 12rem;
+    /* flex-grow:2; */
+}
+
+.subtitulo-banner {
+    color: #98C1D9;
+}
+
+.titulo-banner {
+    font-size: 4rem;
+    color: white;
+    
+}
+
+#links-index {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5rem;
+    margin-top: -2rem;
+}
+
+/* bg-white h-[16rem] w-[14rem] flex flex-col items-center p-3 */
+
+.link-index {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: white;
+    width: 14rem;
+    height: 16rem;
+}
+
+.icone-link {
+    background-color: #98C1D9;
+    padding: 1.7rem;
+    margin: -2.5rem;
+}
+
+.link-texto {
+    padding-top: 4rem;
+}
