@@ -12,9 +12,19 @@ body {
     background-color: #EEEEEE;
 }
 
+.logo{
+    position: absolute;
+    left: 2.5rem;
+    top: 2.5rem;
+    width: 120px;
+}
+
 .banner-index{
     background-image: url('img/banner-index.png');
     height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .logo{
@@ -42,8 +52,10 @@ body {
     font-family: "Inter", sans-serif;
     border-radius: 0.2rem;
     background-color: #98C1D9;
-    padding: 0.5rem;
     border: none;
+    width: 8rem;
+    height: 2.5rem;
+    cursor: pointer;
 }
 
 .botao-index:hover {
@@ -69,12 +81,22 @@ body {
     
 }
 
+
+
+@media (max-width: 900px) {
+    #definicao-info-div{
+        flex-wrap: wrap;
+    }
+}
+
 #links-index {
     display:flex;
     flex-direction: row;
     justify-content: center;
-    gap: 5rem;
-    margin-top: -2rem;
+    gap: 8rem;
+    flex-wrap: wrap;
+    margin-top: -3rem;
+    padding: 0.8rem;
 }
 
 /* bg-white h-[16rem] w-[14rem] flex flex-col items-center p-3 */
@@ -86,15 +108,139 @@ body {
     padding: 0.5rem;
     background-color: white;
     width: 14rem;
-    height: 16rem;
+    height: 18rem;
+    border-radius: 0.3rem;
+    gap: 2rem;
+    flex-wrap: wrap;
+    gap: 2rem;
 }
 
 .icone-link {
-    background-color: #98C1D9;
-    padding: 1.7rem;
+    background-color: #3D5A80;
+    padding: 1rem;
     margin: -2.5rem;
+    border-radius: 0.3rem;
 }
 
 .link-texto {
-    padding-top: 4rem;
+    margin-top: 2rem;
+    font-weight: 700;
+    font-family: 'Homenaje',sans-serif;
+    font-size: 1.5rem;
+}
+
+.link-texto2 {
+    width: 10rem;
+}
+
+#definicao-info-div {
+    display: flex;
+    flex-direction: row;
+    padding: 5rem;
+    margin-top: 3rem;
+    align-items: center;
+    gap: 3rem;
+}
+
+.definicao-info-pergunta1, .definicao-info-pergunta2  {
+    font-size: 3.2rem;
+}
+
+.definicao-info-pergunta1 {
+    color:  #98C1D9;
+}
+
+.definicao-info-pergunta2 {
+    font-family: "Homenaje", sans-serif;
+    font-weight: 600;
+}
+
+#definicao-info-pergunta {
+    width: 320px;
+
+}
+#definicao-info-resposta {
+    max-width: 900px;
+}
+#definicao-info-resposta1 {
+    font-size: 1.3rem;
+}
+
+#areas-info-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 2rem;
+}
+
+#areas-info {
+    display: flex;
+    flex-direction: column;
+    background-color: #98C1D9;
+    padding: 5rem;
+    gap: 3rem;
+}
+
+#areas-titulo {
+    font-family: "Homenaje", sans-serif;
+    font-weight: 600;
+    font-size: 3.2rem;
+    max-width: 750px;
+    
+}
+
+.area {
+    display: flex;
+    flex-direction: row;
+    gap: 0.4rem;
+}
+
+.area-2 {
+    display: flex;
+    flex-direction: column;
+    max-width: 320px;
+    gap: 1rem;
+}
+
+.linha {
+    width: 1px;
+    background-color: black;
+    height: 180px;
+}
+
+.titulo-area{
+    font-family: "Homenaje", sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.info-add{
+    display: flex;
+    flex-direction: row;
+}
+
+.titulo-info-add span{
+    writing-mode:vertical-rl;
+}
+
+.linha-info-add{
+    width: 1px;
+    background-color: black;
+    height: 180px;
+}
+
+@media (max-width: 600px) {
+
+    .titulo-banner {
+        font-size: 2.5rem;
+        color: white;
+
+    }
+
+    .linha {
+        width: 1px;
+        background-color: black;
+        height: 220px;
+    }
 }
