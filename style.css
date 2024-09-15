@@ -244,3 +244,21 @@ body {
         height: 220px;
     }
 }
+
+.docente{
+    display: flex;
+    flex-direction: row;
+}
+
+.docente-foto{
+    width: 200px;
+    height: 200px;
+}
+
+.docente-1{
+    background-color: #98C1D9;
+}
+
+.docente-titulo{
+    font-size: 2rem;
+}
