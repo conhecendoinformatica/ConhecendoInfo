@@ -41,7 +41,7 @@
                 </div>
                 <span class="link-texto">Destaques</span>
                 <span class="link-texto2">
-                    Veja os alunos que se destacaram durante a sua trajetória no IFRS
+                    Veja os alunos de informática que se destacaram durante a sua trajetória no IFRS
                 </span>
                 <button class="botao-index">Saiba mais</button>
             </div>
@@ -104,14 +104,29 @@
     </div>
 
     <div class="info-add">
-        <div class="titulo-info-add">
-            <span>Informações Adicionais</span>
-            <div class="linha-info-add"></div>
-        </div>
-        <div class="texto-info-add">
-        O curso Técnico em Informática para Internet, integrado ao Ensino Médio, é uma excelente oportunidade para quem deseja ingressar na área de tecnologia desde cedo. Com um total de 3.493 horas distribuídas ao longo de quatro anos, o curso tem uma estrutura anual e regime integral, com aulas nos períodos da manhã e tarde. Voltado para estudantes que já concluíram o Ensino Fundamental, o ingresso é feito por meio de um teste classificatório, o que garante uma seleção justa e baseada no desempenho dos 30 candidatos.
+        <span class="titulo-info-add">Informações Adicionais</span>
+        <div class="div-texto-info-add">
+            <div class="linha-info-add"></div> 
+            <div class="texto-info-add">
+                O curso Técnico em Informática para Internet, <span class="bold-info-add">integrado ao Ensino Médio</span>, é uma excelente oportunidade para quem deseja ingressar na área de tecnologia desde cedo. Com um total de <span class="bold-info-add">3.493 horas</span> distribuídas ao longo de <span class="bold-info-add">quatro anos</span>, o curso tem uma estrutura anual e <span class="bold-info-add">regime integral</span>, com aulas nos períodos da manhã e tarde. Voltado para estudantes que já concluíram o Ensino Fundamental, o ingresso é feito por meio de um <span class="bold-info-add">teste classificatório</span>, o que garante uma seleção justa e baseada no desempenho dos 30 candidatos.
+            </div>
         </div>
     </div>
     </div>
+    <footer id="rodape">
+        <img src="img/logo_ifrs.png" alt="">
+        <div class="informacoes-rodape">
+            <div class="titulos-rodape">
+                <span>Comunicação</span>
+                <span>Redes Sociais</span>
+            </div>
+            <div class="informacoes2-rodape">
+                <span>Acesse o site do IFRS</span>
+                <span>Processo Seletivo</span>
+                <span>conhecendoinformaticaIFRS@gmail.com</span>
+                <span>Instagram de Informática</span>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
