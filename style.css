@@ -301,29 +301,32 @@ body {
     display: flex;
     flex-direction: row;
     background-color: #3D5A80;
-    padding: 1rem;
-    gap: 8rem;
+    padding: 5rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    color: white;
+    gap: 2rem;
 }
 
-.informacoes-rodape {
+.informacao-rodape{
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 1rem;
 }
 
-.titulos-rodape {
+.informacoes-rodape{
     display: flex;
-    gap: 43rem;
-    margin-left: -1rem;
-    font-weight: 600;
-    color: white;
+    flex-direction: row;
+    gap: 2rem;
+    flex-wrap: wrap;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
-.informacoes2-rodape {
-    display: flex;
-    gap: 5rem;
-    color: #EEEEEE;
+.titulo-rodape{
+    font-weight: 700;
 }
+
 
 /* novo arquivo */
 

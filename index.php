@@ -115,16 +115,18 @@
     </div>
     <footer id="rodape">
         <img src="img/logo_ifrs.png" alt="">
-        <div class="informacoes-rodape">
-            <div class="titulos-rodape">
-                <span>Comunicação</span>
-                <span>Redes Sociais</span>
-            </div>
-            <div class="informacoes2-rodape">
+        <div class="informacao-rodape">
+            <span class="titulo-rodape">Comunicação</span>
+            <div class="informacoes-rodape">
                 <span>Acesse o site do IFRS</span>
                 <span>Processo Seletivo</span>
                 <span>conhecendoinformaticaIFRS@gmail.com</span>
-                <span>Instagram de Informática</span>
+            </div>
+        </div>
+        <div class="informacao-rodape">
+            <span class="titulo-rodape">Redes Sociais</span>
+            <div class="informacoes-rodape">
+                <span>@informaticaifrsrg</span>
             </div>
         </div>
     </footer>
