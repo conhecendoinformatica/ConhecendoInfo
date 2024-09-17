@@ -333,11 +333,16 @@ body {
 .docente{
     display: flex;
     flex-direction: row;
+   justify-content: center;
+   padding: 2rem;
+   gap: 4rem;
+   flex-wrap: wrap;
+   
 }
 
 .docente-foto{
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
 }
 
 .docente-1{
@@ -345,5 +350,54 @@ body {
 }
 
 .docente-titulo{
-    font-size: 2rem;
+    font-size: 3rem;
+    color: #3D5A80;
+    font-weight: 660;
+    font-family: "Homenaje", sans-serif;
 }
+
+.docente-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    max-width: 800px; 
+}
+
+.paginacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.6rem;
+}
+
+.seta-paginas-btt {
+    font-family: "Inter", sans-serif;
+    border-radius: 0.2rem;
+    background-color: #3D5A80;
+    border: none;
+    width: 1.3rem;
+    height: 1.3rem;
+    cursor: pointer;
+    color: white;
+}
+
+.numero-paginas-btt {
+    font-family: "Inter", sans-serif;
+    border-radius: 0.2rem;
+    background-color: #3D5A80;
+    border: none;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    color: white;
+}
+
+/* .botao-index {
+    
+}
+
+.botao-index:hover {
+    background-color: #cce7f7;
+} */
+
