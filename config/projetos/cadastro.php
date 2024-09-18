@@ -13,7 +13,7 @@
         function mostrarDisciplina() {
             var select_tipo = document.querySelector('#tipo_projetos').value;
             var div_disciplina = document.querySelector('#select_projetos');
-            if(select_tipo == 'disciplina') {
+            if(select_tipo == 'disciplinar') {
                 div_disciplina.style = "display:block";
             }
             else{
@@ -65,7 +65,7 @@
             }
             desenvolvedores.push(desenvolvedor);
             document.querySelector("#desenvolvedores").innerHTML += `
-                <div id="${desenvolvedor}" onclick="removeDesenvolvedor('${desenvolvedor}')">${desenvolvedor} X</div>
+                <div id="${desenvolvedor.replaceAll(" ","")}" onclick="removeDesenvolvedor('${desenvolvedor.replaceAll(" ","")}')">${desenvolvedor} X</div>
             `;
             document.querySelector("#pesquisa").value = "";
             document.querySelector("#post").value = desenvolvedores.join(";");
@@ -99,7 +99,7 @@
         <label for="tipo_projetos">Tipo de Projeto:</label>
         <select name="tipo" id="tipo_projetos" onchange="mostrarDisciplina()">
             <option value="pessoal">Pessoal</option>
-            <option value="disciplina">Disciplina</option>
+            <option value="disciplinar">Disciplinar</option>
         </select><br>
         <div id="select_projetos" style="display: none;">
             <label for="disciplina_projetos">Disciplina:</label>

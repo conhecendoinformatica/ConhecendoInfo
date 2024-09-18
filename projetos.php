@@ -42,13 +42,13 @@
     <img src="img/logo.png" alt="Logo" class="logo">
     <div class="banner-index">
         <div class="titulo-banner-div">
-            <span class="subtitulo-banner">Sucesso e Prestígio</span>
-            <span class="fonte-destaque titulo-banner">Destaques</span>
+            <span class="subtitulo-banner">Criatividade e tecnologia</span>
+            <span class="fonte-destaque titulo-banner">Projetos</span>
         </div>
     </div>
     <?php 
     $conexao = mysqli_connect("localhost", "root", "", "conhecendoinformatica");
-    $query = "SELECT count(*) as quantidade FROM destaques";
+    $query = "SELECT count(*) as quantidade FROM projetos";
     $result = mysqli_query($conexao,$query);
     $linha = mysqli_fetch_array($result, MYSQLI_ASSOC);
     $npaginas = ceil(intval($linha['quantidade'])/5);
@@ -58,12 +58,12 @@
     else{
         $pagina = 0;
     }
-    $query = "SELECT * FROM destaques LIMIT 5 OFFSET ".($pagina*5);
+    $query = "SELECT * FROM projetos LIMIT 5 OFFSET ".($pagina*5);
     $result = mysqli_query($conexao,$query);
     $c = 0;
     while($linha = mysqli_fetch_array($result, MYSQLI_ASSOC)){
     ?>
-    <div class="destaque destaque-<?php if($c%2 == 0){ echo '0';}else{ echo '1';}?>">
+    <div class="projeto projeto-<?php if($c%2 == 0){ echo '0';}else{ echo '1';}?>">
         <?php 
             if($c%2 == 0){
         ?>
@@ -71,12 +71,12 @@
                 <span class="voltar-carrossel voltar-carrossel-<?=$c?>" onclick="voltar(<?=$c?>,0)"><</span>
                 <span class="passar-carrossel passar-carrossel-<?=$c?>" onclick="passar(<?=$c?>,0)">></span>
                 <?php 
-                    $query = "SELECT arquivos.endereco as endereco FROM arquivos JOIN destaque_arquivo ON arquivos.id = destaque_arquivo.arquivo WHERE destaque_arquivo.destaque = ".$linha['id'];
+                    $query = "SELECT arquivos.endereco as endereco FROM arquivos JOIN projeto_arquivo ON arquivos.id = projeto_arquivo.arquivo WHERE projeto_arquivo.projeto = ".$linha['id'];
                     $resultado = mysqli_query($conexao,$query);
                     $i = 0;
                     while($arquivo = mysqli_fetch_array($resultado, MYSQLI_ASSOC)){
                 ?>
-                <img src="uploads/<?=$arquivo['endereco']?>" id="img<?=$c?><?=$i?>" class="img<?=$c?> destaque-foto"<?php if($i==0){echo "style='opacity:100%;'";}else{echo "style='opacity:0%;'";}?>>
+                <img src="uploads/<?=$arquivo['endereco']?>" id="img<?=$c?><?=$i?>" class="img<?=$c?> projeto-foto"<?php if($i==0){echo "style='opacity:100%;'";}else{echo "style='opacity:0%;'";}?>>
                 <?php 
                         $i++;
                     }
@@ -85,9 +85,61 @@
         <?php 
             }
         ?>
-        <div class="destaque-texto">
-            <span class="destaque-titulo"><?=$linha['titulo']?></span>
+        <div class="projeto-texto">
+            <span class="projeto-titulo"><?=$linha['nome']?></span>
             <span class="destaque-descricao"><?=$linha['descricao']?></span>
+            <span class="projeto-tipo">Feito como projeto <?=$linha['tipo']?></span>
+            <?php 
+                if($linha['tipo'] == "disciplinar"){
+                    $query = "SELECT arquivos.endereco as endereco FROM arquivos JOIN projeto_arquivo ON arquivos.id = projeto_arquivo.arquivo WHERE projeto_arquivo.projeto = ".$linha['id'];
+                    $resultado = mysqli_query($conexao,$query);
+                    $disciplinas = mysqli_fetch_array($resultado, MYSQLI_ASSOC);
+                    $disciplina = $disciplinas['nome'];
+            ?>
+            <span class="projeto-disciplina">Disciplina:<?=$disciplina?></span>
+            <?php 
+                }
+            ?>
+            <?php 
+                $query = "SELECT count(*) as quantidade FROM membros JOIN projeto_membro ON membros.id = projeto_membro.membro WHERE projeto_membro.projeto = ".$linha['id'];
+                $resultado = mysqli_query($conexao,$query);
+                $quantidade1 = mysqli_fetch_array($resultado, MYSQLI_ASSOC);
+                $quantidade2 = $quantidade1['quantidade'];
+                $query = "SELECT membros.nome as nome FROM membros JOIN projeto_membro ON membros.id = projeto_membro.membro WHERE projeto_membro.projeto = ".$linha['id'];
+                $resultado = mysqli_query($conexao,$query);
+                if($quantidade2==1){
+                    $membro = mysqli_fetch_array($resultado, MYSQLI_ASSOC);
+            ?>
+            <span class="projeto-desenvolvedores">Desenvolvedor: <?=$membro['nome']?>
+            <?php 
+                }else{
+            ?>
+            <span class="projeto-desenvolvedores">Desenvolvedores:
+            <?php 
+                    $j = 1;
+                    while($membro = mysqli_fetch_array($resultado, MYSQLI_ASSOC)){
+                        if($j == $quantidade2-1){
+            ?>
+                    <?=$membro['nome']?> e
+            <?php 
+                        }
+                        else if($j == $quantidade2){
+            ?>
+                    <?=$membro['nome']?>
+            <?php 
+                        }
+                        else{
+            ?>
+                    <?=$membro['nome']?>,
+            <?php   
+                        }
+                    $j++;
+                    }
+                }
+            ?>
+            </span>
+            <span class="projeto-ano">Ano:<?=$linha['ano_escolar']?>º ano/<?=$linha['ano']?></span>
+            
         </div>
         <?php 
             if(!($c%2 == 0)){
@@ -96,12 +148,12 @@
                 <span class="voltar-carrossel voltar-carrossel-<?=$c?>" onclick="voltar(<?=$c?>,0)"><</span>
                 <span class="passar-carrossel passar-carrossel-<?=$c?>" onclick="passar(<?=$c?>,0)">></span>
                 <?php 
-                    $query = "SELECT arquivos.endereco as endereco FROM arquivos JOIN destaque_arquivo ON arquivos.id = destaque_arquivo.arquivo WHERE destaque_arquivo.destaque = ".$linha['id'];
+                    $query = "SELECT arquivos.endereco as endereco FROM arquivos JOIN projeto_arquivo ON arquivos.id = projeto_arquivo.arquivo WHERE projeto_arquivo.projeto = ".$linha['id'];
                     $resultado = mysqli_query($conexao,$query);
                     $i = 0;
                     while($arquivo = mysqli_fetch_array($resultado, MYSQLI_ASSOC)){
                 ?>
-                <img src="uploads/<?=$arquivo['endereco']?>" id="img<?=$c?><?=$i?>" class="img<?=$c?> destaque-foto"<?php if($i==0){echo "style='opacity:100%;'";}else{echo "style='opacity:0%;'";}?>>
+                <img src="uploads/<?=$arquivo['endereco']?>" id="img<?=$c?><?=$i?>" class="img<?=$c?> projeto-foto"<?php if($i==0){echo "style='opacity:100%;'";}else{echo "style='opacity:0%;'";}?>>
                 <?php 
                         $i++;
                     }
@@ -119,33 +171,33 @@
         <?php 
             if($pagina>3){
         ?>
-        <form action="destaques.php" method="post">
+        <form action="projetos.php" method="post">
             <button class="seta-paginas-btt" value="<?php echo $pagina-3?>" name="pagina" type="submit"><<</button>
         </form>
         <?php
             }
             if($pagina>0){
         ?>
-        <form action="destaques.php" method="post">
+        <form action="projetos.php" method="post">
             <button class="seta-paginas-btt" value="<?php echo $pagina-1?>" name="pagina" type="submit"><</button>
         </form>
         <?php
             }
         ?>
-        <form action="destaques.php" method="post">
+        <form action="projetos.php" method="post">
             <button class="numero-paginas-btt" value="<?php echo $pagina?>" name="pagina" type="submit"><?php echo $pagina+1?></button>
         </form>
         <?php 
             if($npaginas-$pagina>1){
         ?>
-        <form action="destaques.php" method="post">
+        <form action="projetos.php" method="post">
             <button class="seta-paginas-btt" value="<?php echo $pagina+1?>" name="pagina" type="submit">></button>
         </form>
         <?php
             }
             if($npaginas-$pagina>3){
         ?>
-        <form action="destaques.php" method="post">
+        <form action="projetos.php" method="post">
             <button class="seta-paginas-btt" value="<?php echo $pagina+3?>" name="pagina" type="submit">>></button>
         </form>
         <?php

@@ -330,7 +330,7 @@ body {
 
 /* novo arquivo */
 
-.docente{
+.docente, .destaque, .projeto{
     display: flex;
     flex-direction: row;
    justify-content: center;
@@ -340,27 +340,73 @@ body {
    
 }
 
-.docente-foto{
-    width: 300px;
-    height: 300px;
+.docente-foto, .destaque-foto, .carrossel, .projeto-foto{
+    width: 380px;
+    height: 380px;
+    position: relative;
 }
 
-.docente-1{
+.destaque-foto, .projeto-foto{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.docente-1,.ano-disciplinas-1,.destaque-1, .projeto-1{
     background-color: #98C1D9;
 }
 
-.docente-titulo{
+.docente-titulo, .destaque-titulo, .projeto-titulo{
     font-size: 3rem;
     color: #3D5A80;
     font-weight: 660;
     font-family: "Homenaje", sans-serif;
 }
 
-.docente-texto {
+.docente-texto, .destaque-texto, .projeto-texto{
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
     max-width: 800px; 
+}
+
+.titulo-ano{
+    font-size: 2.5rem;
+    color: #3D5A80;
+    font-weight: 660;
+    font-family: "Homenaje", sans-serif;
+}
+
+.ano-disciplinas{
+    display: flex;
+    flex-direction: column;
+    padding: 5rem;
+    gap: 2rem;
+}
+
+.disciplinas{
+    display: flex;
+    gap: 12rem;
+    flex-wrap: wrap;
+}
+
+.disciplina-div{
+    width: 300px;
+    display: flex;
+    gap: 1rem;
+}
+
+.linha-disciplina{
+    width: 1px;
+    background-color: black;
+    height: 200px;
+}
+
+.titulo-disciplina{
+    font-size: 1.5rem;
+    color: #3D5A80;
+    font-weight: 660;
+    font-family: "Homenaje", sans-serif;
 }
 
 .paginacao {
@@ -393,6 +439,40 @@ body {
     color: white;
 }
 
+.voltar-carrossel{
+    position: absolute;
+    top: 40%;
+    color: white;
+    z-index: 10;
+    font-size: 2.5rem;
+    font-weight: 100;
+    left: 2%;
+}
+.passar-carrossel{
+    position: absolute;
+    top: 40%;
+    right: 2%;
+    color: white;
+    z-index: 10;
+    font-size: 2.5rem;
+    font-weight: 100;
+}
+@keyframes tira{
+    from{
+        opacity: 100%;
+    }
+    to{
+        opacity: 0%;
+    }
+}
+@keyframes coloca{
+    from{
+        opacity: 0%;
+    }
+    to{
+        opacity: 100%;
+    }
+}
 /* .botao-index {
     
 }

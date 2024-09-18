@@ -23,7 +23,9 @@
                 <span class="link-texto2">
                     Veja a produção científica do curso através de projetos dos estudantes
                 </span>
-                <button class="botao-index">Saiba mais</button>
+                <form action="projetos.php">
+                    <button class="botao-index" type="submit">Saiba mais</button>
+                </form>
             </div>
             <div class="link-index">
             <div class="icone-link">
@@ -33,7 +35,9 @@
                 <span class="link-texto2">
                     Conheça os profissionais que tornam esse curso possível
                 </span>
-                <button class="botao-index">Saiba mais</button>
+                <form action="docentes.php">
+                    <button class="botao-index" type="submit">Saiba mais</button>
+                </form>
             </div>
             <div class="link-index">
                 <div class="icone-link">
@@ -43,7 +47,9 @@
                 <span class="link-texto2">
                     Veja os alunos de informática que se destacaram durante a sua trajetória no IFRS
                 </span>
-                <button class="botao-index">Saiba mais</button>
+                <form action="destaques.php">
+                    <button class="botao-index" type="submit">Saiba mais</button>
+                </form>
             </div>
             <div class="link-index">
                 <div class="icone-link">
@@ -53,7 +59,9 @@
                 <span class="link-texto2">
                     Descubra tudo que você vai aprender ao decorrer destes quatro anos
                 </span>
-                <button class="botao-index">Saiba mais</button>
+                <form action="disciplinas.php">
+                    <button class="botao-index" type="submit">Saiba mais</button>
+                </form>
             </div>
         </div>
     </div>

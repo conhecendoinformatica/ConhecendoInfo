@@ -39,6 +39,7 @@
                     if(in_array($fileType, $allowTypes)){ 
                         // Upload file to server 
                         if(move_uploaded_file($_FILES['file'.$i]["tmp_name"], $targetFilePath)){ 
+                            echo "entrou";
                             // Insert image file name into database 
                                 $query = "INSERT INTO arquivos(endereco) VALUES ('$fileNameModified')";
                                 mysqli_query($conexao,$query);
@@ -61,6 +62,7 @@
                 $query = "SELECT id FROM membros WHERE nome = '".$desenvolvedores[$i]."' and cargo = 'aluno'";
                 $result = mysqli_query($conexao,$query);
                 if($result2['linhas']==0){
+                    echo "entrou";
                     $query = "INSERT INTO membros(nome,cargo) VALUES ('".$desenvolvedores[$i]."','aluno');";
                     mysqli_query($conexao,$query);
                     $query = "SELECT id FROM membros ORDER BY 1 desc LIMIT 1";
