@@ -7,7 +7,7 @@
 </head>
 <body>
     <div>
-        <img src="img/logo.png" alt="Logo" class="logo">
+        <a href="index.php"><img src="img/logo.png" alt="Logo" class="logo"></a>
         <div class="banner-index">
             <div class="titulo-banner-div">
                 <span class="subtitulo-banner">Conhecendo o curso de</span>
@@ -126,8 +126,8 @@
         <div class="informacao-rodape">
             <span class="titulo-rodape">Comunicação</span>
             <div class="informacoes-rodape">
-                <span>Acesse o site do IFRS</span>
-                <span>Processo Seletivo</span>
+                <a class="link-rodape" href="https://ifrs.edu.br/riogrande/">Acesse o site do IFRS</a>
+                <a class="link-rodape" href="https://ingresso.ifrs.edu.br/2024/editais/?_gl=1*970wd2*_ga*NjI3MDE5ODUzLjE3MjI4NzYwNDM.*_ga_HCJKMD2J4X*MTcyNjc2NDM5Mi4xMS4xLjE3MjY3NjQ0OTcuMC4wLjA.">Processo Seletivo</a>
                 <span>conhecendoinformaticaIFRS@gmail.com</span>
             </div>
         </div>

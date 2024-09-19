@@ -27,6 +27,14 @@ body {
     justify-content: center;
 }
 
+.banner-outros{
+    background-image: url('img/banner-index.png');
+    height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .logo{
     color: white;
     position: absolute;
@@ -117,6 +125,20 @@ body {
     gap: 2rem;
 }
 
+.link-outros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: white;
+    width: 14rem;
+    height: 6rem;
+    border-radius: 0.3rem;
+    gap: 2rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
 .icone-link {
     background-color: #3D5A80;
     padding: 1rem;
@@ -131,8 +153,19 @@ body {
     font-size: 1.5rem;
 }
 
+.link-texto-outros {
+    text-decoration: none;
+    margin-top: 2rem;
+    font-weight: 700;
+    font-family: 'Homenaje',sans-serif;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: black;
+}
+
 .link-texto2 {
     width: 10rem;
+    height: 5rem;
 }
 
 #definicao-info-div {
@@ -323,12 +356,17 @@ body {
     word-break: break-all;
 }
 
+.link-rodape {
+    text-decoration: none;
+    color: white;
+}
+
 .titulo-rodape{
     font-weight: 700;
 }
 
 
-/* novo arquivo */
+/* paginas específicas */
 
 .docente, .destaque, .projeto{
     display: flex;
