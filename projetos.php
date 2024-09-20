@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Docentes</title>
+    <title>Projetos</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <script>
+       
         function passar(ndiv,n){
             let imagens = document.querySelectorAll('.img'+ndiv);
             let next = (n+1)%imagens.length;
@@ -165,7 +166,9 @@
             ?>
             </span>
             <span class="projeto-ano">Ano:<?=$linha['ano_escolar']?>º ano/<?=$linha['ano']?></span>
-            
+            <div>
+            <canvas id="canvas" width="50" height="50"></canvas>
+            </div>
         </div>
         <?php 
             if(!($c%2 == 0)){
@@ -193,6 +196,7 @@
         $c++;
     }
     ?>
+    
     <div class="paginacao">
         <?php 
             if($pagina>3){
@@ -236,7 +240,7 @@
             <span class="titulo-rodape">Comunicação</span>
             <div class="informacoes-rodape">
             <a class="link-rodape" href="https://ifrs.edu.br/riogrande/">Acesse o site do IFRS</a>
-            <a class="link-rodape" href="https://ingresso.ifrs.edu.br/2024/editais/?_gl=1*970wd2*_ga*NjI3MDE5ODUzLjE3MjI4NzYwNDM.*_ga_HCJKMD2J4X*MTcyNjc2NDM5Mi4xMS4xLjE3MjY3NjQ0OTcuMC4wLjA.">Processo Seletivo</a>
+            <a class="link-rodape" href="https://ingresso.ifrs.edu.br/2025/">Processo Seletivo</a>
                 <span>conhecendoinformaticaIFRS@gmail.com</span>
             </div>
         </div>
@@ -247,5 +251,28 @@
             </div>
         </div>
     </footer>
+    <script>
+         function draw() {
+        const canvas = document.getElementById("canvas");
+        if (canvas.getContext) {
+        const ctx = canvas.getContext("2d");
+
+        // Cubic curves example
+        ctx.beginPath();
+        ctx.fillStyle = 'rgb(255,0,0)';
+            ctx.moveTo(25,20);
+            ctx.bezierCurveTo(25,0,0,0,0,20);
+            // ctx.moveTo(25, 13.33);
+            // ctx.bezierCurveTo(25, 12.33, 23.33, 8.33, 16.67, 8.33);
+            // ctx.bezierCurveTo(6.67, 8.33, 6.67, 20.83, 6.67, 20.83);
+            // ctx.bezierCurveTo(6.67, 26.67, 13.33, 34, 25, 40);
+            // ctx.bezierCurveTo(36.67, 34, 43.33, 26.67, 43.33, 20.83);
+            // ctx.bezierCurveTo(43.33, 20.83, 43.33, 8.33, 33.33, 8.33);
+            // ctx.bezierCurveTo(28.33, 8.33, 25, 12.33, 25, 13.33);
+        ctx.stroke();
+        }
+    }
+        draw();
+    </script>
 </body>
 </html>

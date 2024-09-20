@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Docentes</title>
+    <title>Destaques</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -184,7 +184,7 @@
             <span class="titulo-rodape">Comunicação</span>
             <div class="informacoes-rodape">
             <a class="link-rodape" href="https://ifrs.edu.br/riogrande/">Acesse o site do IFRS</a>
-            <a class="link-rodape" href="https://ingresso.ifrs.edu.br/2024/editais/?_gl=1*970wd2*_ga*NjI3MDE5ODUzLjE3MjI4NzYwNDM.*_ga_HCJKMD2J4X*MTcyNjc2NDM5Mi4xMS4xLjE3MjY3NjQ0OTcuMC4wLjA.">Processo Seletivo</a>
+            <a class="link-rodape" href="https://ingresso.ifrs.edu.br/2025/">Processo Seletivo</a>
                 <span>conhecendoinformaticaIFRS@gmail.com</span>
             </div>
         </div>

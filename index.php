@@ -31,7 +31,7 @@
             <div class="icone-link">
                     <img src="img/docentes.png" alt="Docentes">
                 </div>
-                <span class="link-texto">Docentes Técnicos</span>
+                <span class="link-texto">Docentes da Área Técnica</span>
                 <span class="link-texto2">
                     Conheça os profissionais que tornam esse curso possível
                 </span>
@@ -94,7 +94,7 @@
                 <div class="area-2">
                     <span class="titulo-area">Backend</span>
                     <span>
-                        O Backend é uma parte da aplicação que tem duas responsabilidades principais: executar lógicas mais complexas e armazenar os dados da aplicação. Mas o que são essas lógicas? Basicamente, são as ações que a aplicação deve executar.
+                        O Backend é a área que lida com os bastidores das funcionalidades do website, definindo a estrutura de banco de dados e os códigos relacionados a funcionalidade, como a segurança, administração de dados e arquitetura do servidor.
                     </span>
                 </div>
                 
@@ -104,8 +104,7 @@
                 <div class="area-2">
                     <span class="titulo-area">Engenharia de Software</span>
                     <span>
-                        O engenheiro de software atua no projeto e desenvolvimento de sistemas, aplicativos e programas. Trabalha na criação do conjunto de instruções lógicas, conhecido como software, que direciona as operações de um computador ou sistema de processamento de dados.
-                    </span>
+                        O engenheiro de software atua no projeto e desenvolvimento de sistemas, aplicativos e programas. Trabalha na criação do conjunto de instruções lógicas, que irá orientar o desenvolvedor a criar um produto, identificando potenciais falhas e aprimorando a performace.
                 </div>
             </div>
         </div>
@@ -127,7 +126,7 @@
             <span class="titulo-rodape">Comunicação</span>
             <div class="informacoes-rodape">
                 <a class="link-rodape" href="https://ifrs.edu.br/riogrande/">Acesse o site do IFRS</a>
-                <a class="link-rodape" href="https://ingresso.ifrs.edu.br/2024/editais/?_gl=1*970wd2*_ga*NjI3MDE5ODUzLjE3MjI4NzYwNDM.*_ga_HCJKMD2J4X*MTcyNjc2NDM5Mi4xMS4xLjE3MjY3NjQ0OTcuMC4wLjA.">Processo Seletivo</a>
+                <a class="link-rodape" href="https://ingresso.ifrs.edu.br/2025/">Processo Seletivo</a>
                 <span>conhecendoinformaticaIFRS@gmail.com</span>
             </div>
         </div>

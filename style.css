@@ -95,6 +95,8 @@ body {
     #definicao-info-div{
         flex-wrap: wrap;
     }
+
+        
 }
 
 #links-index {
@@ -285,51 +287,6 @@ body {
     color:#3D5A80
 }
 
-@media (max-width: 600px) {
-
-    .titulo-banner {
-        font-size: 2.5rem;
-        color: white;
-
-    }
-
-    .linha {
-        width: 1px;
-        background-color: black;
-        height: 220px;
-    }
-
-    .linha-info-add {
-        width: 1px;
-        background-color: black;
-        height: 340px;
-    }
-
-    .titulo-info-add {
-        font-size: 1.5rem;
-        color: #98C1D9;
-        font-weight: 500;
-        font-family: "Homenaje", sans-serif;
-        display: block; /* ou outro valor desejado */
-        transform: none; /* remove a rotação */
-    }
-
-    .info-add{
-        display: flex;
-        flex-direction: column;
-        padding: 5rem;
-        gap: 0.4rem;
-        flex-wrap: wrap;
-    }
-
-    .div-texto-info-add {
-        display: flex;
-        flex-direction: row;
-        gap: 0.4rem;
-    }
-
-}
-
 #rodape {
     display: flex;
     flex-direction: row;
@@ -379,9 +336,10 @@ body {
 }
 
 .docente-foto, .destaque-foto, .carrossel, .projeto-foto{
-    width: 380px;
+    width: 450px;
     height: 380px;
     position: relative;
+    object-fit: cover;
 }
 
 .destaque-foto, .projeto-foto{
@@ -485,6 +443,7 @@ body {
     font-size: 2.5rem;
     font-weight: 100;
     left: 2%;
+    cursor: pointer;
 }
 .passar-carrossel{
     position: absolute;
@@ -494,6 +453,7 @@ body {
     z-index: 10;
     font-size: 2.5rem;
     font-weight: 100;
+    cursor: pointer;
 }
 @keyframes tira{
     from{
@@ -511,11 +471,89 @@ body {
         opacity: 100%;
     }
 }
-/* .botao-index {
-    
+.heart {
+    margin: 20px;
+    /* background-color: black; */
+    height: 20px;
+    transform: rotate(-45deg);
+    width: 20px;
+    position: relative;
+    border-radius: 15%;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
-.botao-index:hover {
-    background-color: #cce7f7;
-} */
+.heart:before,
+.heart:after {
+    content: "";
+    /* background-color: black; */
+    border-radius: 50%;
+    height: 20px;
+    position: absolute;
+    width: 20px;
+    border-right: 1px solid black;
+}
+
+.heart:before {
+    top: -10px;
+}
+
+.heart:after {
+    left: 10px;
+}
+@media (max-width: 600px) {
+
+    .titulo-banner {
+        font-size: 2.5rem;
+        color: white;
+
+    }
+
+    .linha {
+        width: 1px;
+        background-color: black;
+        height: 220px;
+    }
+
+    .linha-info-add {
+        width: 1px;
+        background-color: black;
+        height: 340px;
+    }
+
+    .titulo-info-add {
+        font-size: 1.5rem;
+        color: #98C1D9;
+        font-weight: 500;
+        font-family: "Homenaje", sans-serif;
+        display: block; /* ou outro valor desejado */
+        transform: none; /* remove a rotação */
+    }
+
+    .info-add{
+        display: flex;
+        flex-direction: column;
+        padding: 5rem;
+        gap: 0.4rem;
+        flex-wrap: wrap;
+    }
+
+    .div-texto-info-add {
+        display: flex;
+        flex-direction: row;
+        gap: 0.4rem;
+    }
+    .docente-foto, .destaque-foto, .carrossel, .projeto-foto{
+        width: 300px;
+        height: 253px;
+        position: relative;
+        object-fit: cover;
+    }
+    
+    .destaque-foto, .projeto-foto{
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+}
 
