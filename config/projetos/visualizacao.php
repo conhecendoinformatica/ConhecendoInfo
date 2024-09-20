@@ -77,7 +77,7 @@
                 $query = "INSERT INTO projeto_membro(projeto,membro) VALUES ($id,$id2);";
                 mysqli_query($conexao,$query);
             }
-            if($tipo == "disciplina"){
+            if($tipo == "disciplinar"){
                 $disciplina = $_POST['disciplina'];
                 $query = "INSERT INTO projeto_disciplina(projeto,disciplina) VALUES ($id,$disciplina);";
                 mysqli_query($conexao,$query);
@@ -106,8 +106,8 @@
             $quantidade = mysqli_fetch_array($result, MYSQLI_ASSOC);
             $query = "SELECT arquivos.id as id, arquivos.endereco as endereco FROM arquivos JOIN projeto_arquivo ON arquivos.id = projeto_arquivo.arquivo WHERE projeto_arquivo.projeto = ".$linha['id'].";";
             $arquivos = mysqli_query($conexao,$query);
-            if($linha['tipo'] == 'disciplina'){
-                $query = "SELECT disciplinas.id as id, disciplinas.nome as nome FROM arquivos JOIN projeto_disciplina ON disciplinas.id = projeto_disciplina.disciplina WHERE projeto_disciplina.projeto = ".$linha['id'].";";
+            if($linha['tipo'] == 'disciplinar'){
+                $query = "SELECT disciplinas.id as id, disciplinas.nome as nome FROM disciplinas JOIN projeto_disciplina ON disciplinas.id = projeto_disciplina.disciplina WHERE projeto_disciplina.projeto = ".$linha['id'].";";
                 $resultado = mysqli_query($conexao,$query);
                 $disciplina = mysqli_fetch_array($resultado, MYSQLI_ASSOC);
             }
@@ -116,9 +116,9 @@
     Descrição:<?=$linha['descricao']?> <br>
     Tipo:<?=ucfirst($linha['tipo'])?> <br>
     <?php 
-            if(isset($disciplina)){
+            if($linha['tipo'] == 'disciplinar'){
     ?>
-    Disciplina: <?=$disciplina?> <br>
+    Disciplina: <?=$disciplina['nome']?> <br>
     <?php 
             }
     ?>

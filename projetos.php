@@ -117,7 +117,7 @@
             <span class="projeto-tipo">Feito como projeto <?=$linha['tipo']?></span>
             <?php 
                 if($linha['tipo'] == "disciplinar"){
-                    $query = "SELECT arquivos.endereco as endereco FROM arquivos JOIN projeto_arquivo ON arquivos.id = projeto_arquivo.arquivo WHERE projeto_arquivo.projeto = ".$linha['id'];
+                    $query = "SELECT disciplinas.nome FROM disciplinas JOIN projeto_disciplina ON disciplinas.id = projeto_disciplina.disciplina WHERE projeto_disciplina.projeto = ".$linha['id'];
                     $resultado = mysqli_query($conexao,$query);
                     $disciplinas = mysqli_fetch_array($resultado, MYSQLI_ASSOC);
                     $disciplina = $disciplinas['nome'];
