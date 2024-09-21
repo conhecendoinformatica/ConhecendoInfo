@@ -455,6 +455,16 @@ body {
     font-weight: 100;
     cursor: pointer;
 }
+.coracao-0{
+    background-color: #EEEEEE;
+    border: 0;
+    cursor: pointer;
+}
+.coracao-1{
+    background-color: #98C1D9;
+    border: 0;
+    cursor: pointer;
+}
 @keyframes tira{
     from{
         opacity: 100%;
@@ -470,36 +480,6 @@ body {
     to{
         opacity: 100%;
     }
-}
-.heart {
-    margin: 20px;
-    /* background-color: black; */
-    height: 20px;
-    transform: rotate(-45deg);
-    width: 20px;
-    position: relative;
-    border-radius: 15%;
-    border-left: 1px solid black;
-    border-bottom: 1px solid black;
-}
-
-.heart:before,
-.heart:after {
-    content: "";
-    /* background-color: black; */
-    border-radius: 50%;
-    height: 20px;
-    position: absolute;
-    width: 20px;
-    border-right: 1px solid black;
-}
-
-.heart:before {
-    top: -10px;
-}
-
-.heart:after {
-    left: 10px;
 }
 @media (max-width: 600px) {
 

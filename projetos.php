@@ -7,6 +7,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <?php 
+        $conexao = mysqli_connect("localhost", "root", "", "conhecendoinformatica");
+        if(isset($_POST['id_votos'])){
+            $id = explode("-",$_POST['id_votos'])[0];
+            $tof = explode("-",$_POST['id_votos'])[1];
+            if($tof == 'true'){
+                $query = "UPDATE projetos SET projetos.votos = projetos.votos + 1 WHERE id = $id";
+            }
+            else{
+                $query = "UPDATE projetos SET projetos.votos = projetos.votos - 1 WHERE id = $id";
+            }
+            mysqli_query($conexao,$query);
+        }
+    ?>
     <script>
        
         function passar(ndiv,n){
@@ -24,6 +38,7 @@
             document.querySelector('.voltar-carrossel-'+ndiv).setAttribute("onclick","voltar("+ndiv+","+next+")");
             document.querySelector('.passar-carrossel-'+ndiv).setAttribute("onclick","passar("+ndiv+","+next+")");
         }
+
         function voltar(ndiv,n){
             let imagens = document.querySelectorAll('.img'+ndiv);
             let previous = (n+imagens.length-1)%imagens.length;
@@ -38,6 +53,51 @@
             }
             document.querySelector('.voltar-carrossel-'+ndiv).setAttribute("onclick","voltar("+ndiv+","+previous+")");
             document.querySelector('.passar-carrossel-'+ndiv).setAttribute("onclick","passar("+ndiv+","+previous+")");
+        }
+        function dislike(id,cor) {
+            const canvas = document.getElementById("canvas"+id);
+            if (canvas.getContext) {
+                const ctx = canvas.getContext("2d");
+                ctx.fillStyle = cor;
+	            ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.beginPath();
+                ctx.fillStyle = 'rgb(255,0,0)';
+                ctx.moveTo(25,17);
+                ctx.bezierCurveTo(20,5,5,5,5,20);
+                ctx.bezierCurveTo(5,30,20,45,25,45);
+                ctx.bezierCurveTo(30,45,45,30,45,20);
+                ctx.bezierCurveTo(45,5,30,5,25,17);
+                ctx.stroke();
+            }
+        }
+        function like(id,cor){
+            const canvas = document.getElementById("canvas"+id);
+            if (canvas.getContext) {
+                const ctx = canvas.getContext("2d");
+                ctx.fillStyle = cor;
+	            ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.beginPath();
+                ctx.fillStyle = 'rgb(255,0,0)';
+                ctx.moveTo(25,17);
+                ctx.bezierCurveTo(20,5,5,5,5,20);
+                ctx.bezierCurveTo(5,30,20,45,25,45);
+                ctx.bezierCurveTo(30,45,45,30,45,20);
+                ctx.bezierCurveTo(45,5,30,5,25,17);
+                ctx.fillStyle = "black"
+                ctx.fill();
+            }
+        }
+        function guardaLocalStorage(id){
+            let button = document.querySelector("#button-"+id);
+            
+            if(localStorage.getItem("projeto-"+id)=="true"){
+                localStorage.setItem("projeto-"+id,"false");
+                button.value = id+"-false";
+            }
+            else{
+                localStorage.setItem("projeto-"+id,"true");
+                button.value = id+"-true";
+            }
         }
     </script>
     <a href="index.php"><img src="img/logo.png" alt="Logo" class="logo"></a>
@@ -74,7 +134,6 @@
             </div>
         </div>
     <?php 
-    $conexao = mysqli_connect("localhost", "root", "", "conhecendoinformatica");
     $query = "SELECT count(*) as quantidade FROM projetos";
     $result = mysqli_query($conexao,$query);
     $linha = mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -85,12 +144,13 @@
     else{
         $pagina = 0;
     }
+    unset($_POST);
     $query = "SELECT * FROM projetos LIMIT 5 OFFSET ".($pagina*5);
     $result = mysqli_query($conexao,$query);
     $c = 0;
     while($linha = mysqli_fetch_array($result, MYSQLI_ASSOC)){
     ?>
-    <div class="projeto projeto-<?php if($c%2 == 0){ echo '0';}else{ echo '1';}?>">
+    <div class="projeto projeto-<?php if($c%2 == 0){ echo '0';}else{ echo '1';}?>" id="projeto-<?=$linha['id']?>">
         <?php 
             if($c%2 == 0){
         ?>
@@ -166,9 +226,21 @@
             ?>
             </span>
             <span class="projeto-ano">Ano:<?=$linha['ano_escolar']?>º ano/<?=$linha['ano']?></span>
-            <div>
-            <canvas id="canvas" width="50" height="50"></canvas>
-            </div>
+            <form action="update.php" method="post">
+                <input type="hidden" name="pagina" value="<?=$pagina?>">
+                <button type="submit" class="coracao-<?php if($c%2 == 0){ echo '0';}else{ echo '1';}?>" onclick="guardaLocalStorage(<?=$linha['id']?>)" name="id_votos" id="button-<?=$linha['id']?>">
+                    <canvas id="canvas<?=$linha['id']?>" width="50" height="50"></canvas>
+                    <span><?=$linha['votos']?></span>
+                </button>
+            </form>
+            <script>
+                if(localStorage.getItem("projeto-<?=$linha['id']?>") == "true"){
+                    like(<?=$linha['id']?>,"<?php if($c%2 == 0){ echo '#EEEEEE';}else{ echo '#98C1D9';}?>");
+                }
+                else{
+                    dislike(<?=$linha['id']?>,"<?php if($c%2 == 0){ echo '#EEEEEE';}else{ echo '#98C1D9';}?>");
+                }
+            </script>
         </div>
         <?php 
             if(!($c%2 == 0)){
@@ -252,27 +324,7 @@
         </div>
     </footer>
     <script>
-         function draw() {
-        const canvas = document.getElementById("canvas");
-        if (canvas.getContext) {
-        const ctx = canvas.getContext("2d");
-
-        // Cubic curves example
-        ctx.beginPath();
-        ctx.fillStyle = 'rgb(255,0,0)';
-            ctx.moveTo(25,20);
-            ctx.bezierCurveTo(25,0,0,0,0,20);
-            // ctx.moveTo(25, 13.33);
-            // ctx.bezierCurveTo(25, 12.33, 23.33, 8.33, 16.67, 8.33);
-            // ctx.bezierCurveTo(6.67, 8.33, 6.67, 20.83, 6.67, 20.83);
-            // ctx.bezierCurveTo(6.67, 26.67, 13.33, 34, 25, 40);
-            // ctx.bezierCurveTo(36.67, 34, 43.33, 26.67, 43.33, 20.83);
-            // ctx.bezierCurveTo(43.33, 20.83, 43.33, 8.33, 33.33, 8.33);
-            // ctx.bezierCurveTo(28.33, 8.33, 25, 12.33, 25, 13.33);
-        ctx.stroke();
-        }
-    }
-        draw();
+        
     </script>
 </body>
 </html>
