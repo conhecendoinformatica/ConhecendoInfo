@@ -6,6 +6,26 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <script>
+        function movLink(mov) {
+            if(mov == 'passar') {
+                var pos = document.querySelector('.passar-link').id;
+                var prox_anterior = (parseInt(pos)+1)%4;
+            } else if(mov == 'voltar') {
+                var pos = document.querySelector('.voltar-link').id;
+                var prox_anterior = (parseInt(pos)+3)%4;
+            }
+            for(j=0;j<4;j++) {
+                if(j != prox_anterior) {
+                    document.querySelector(".link-"+j).style.display = 'none';
+                } else {
+                    document.querySelector(".link-"+prox_anterior).style.display = 'flex';
+                }
+            }
+            document.querySelector('.passar-link').id = prox_anterior;
+            document.querySelector('.voltar-link').id = prox_anterior;
+        }
+    </script>
     <div>
         <a href="index.php"><img src="img/logo.png" alt="Logo" class="logo"></a>
         <div class="banner-index">
@@ -14,8 +34,11 @@
                 <span class="fonte-destaque titulo-banner">Informática para internet</span>
             </div>
         </div>
+       
         <div id="links-index">
-            <div class="link-index">
+            <span class="voltar-link" id="0" onclick ="movLink('voltar')"><</span>
+            <span class="passar-link" id="0" onclick ="movLink('passar')">></span>
+            <div class="link-index link-0">
                 <div class="icone-link">
                     <img src="img/projetos.png" alt="Projetos">
                 </div>
@@ -27,7 +50,9 @@
                     <button class="botao-index" type="submit">Saiba mais</button>
                 </form>
             </div>
-            <div class="link-index">
+            <!-- <span class="voltar-link voltar-link2" onclick ="voltarLink('link-1')"><</span>
+            <span class="passar-link passar-link2" onclick ="passarLink('link-1')">></span> -->
+            <div class="link-index link-1">
             <div class="icone-link">
                     <img src="img/docentes.png" alt="Docentes">
                 </div>
@@ -39,7 +64,7 @@
                     <button class="botao-index" type="submit">Saiba mais</button>
                 </form>
             </div>
-            <div class="link-index">
+            <div class="link-index link-2">
                 <div class="icone-link">
                     <img src="img/destaques.png" alt="Destaques">
                 </div>
@@ -51,7 +76,7 @@
                     <button class="botao-index" type="submit">Saiba mais</button>
                 </form>
             </div>
-            <div class="link-index">
+            <div class="link-index link-3">
                 <div class="icone-link">
                     <img src="img/disciplinas.png" alt="Disciplinas">
                 </div>
@@ -64,6 +89,7 @@
                 </form>
             </div>
         </div>
+
     </div>
     <div id="definicao-info-div">
         <div id="definicao-info-pergunta">

@@ -131,8 +131,8 @@
                     <img src="img/disciplinas.png" alt="Disciplinas">
                 </div>
            <a class="link-texto-outros" href="disciplinas.php">Disciplinas Técnicas</a>
-            </div>
         </div>
+    </div>
     <?php 
     $query = "SELECT count(*) as quantidade FROM projetos";
     $result = mysqli_query($conexao,$query);
