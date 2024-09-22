@@ -37,31 +37,31 @@
     <div id="links-index">
         <span class="voltar-link" id="0" onclick ="movLink('voltar')"><</span>
         <span class="passar-link" id="0" onclick ="movLink('passar')">></span>
-        <div class="link-outros">
+        <div class="link-outros link-0">
             <div class="icone-link">
                 <img src="img/projetos.png" alt="Projetos">
             </div>
             <a class="link-texto-outros" href="projetos.php">Projetos</a>
-            </div>
-            <div class="link-outros">
-                <div class="icone-link">
-                    <img src="img/docentes.png" alt="Docentes">
-                </div>
-            <a class="link-texto-outros" href="docentes.php">Docentes da Área Técnica</a>
-            </div>
-            <div class="link-outros">
-                <div class="icone-link">
-                    <img src="img/destaques.png" alt="Destaques">
-                </div>
-            <a class="link-texto-outros" href="destaques.php">Destaques</a>
-            </div>
-            <div class="link-outros">
-                <div class="icone-link">
-                    <img src="img/disciplinas.png" alt="Disciplinas">
-                </div>
-           <a class="link-texto-outros" href="disciplinas.php">Disciplinas Técnicas</a>
-            </div>
         </div>
+        <div class="link-outros link-1">
+            <div class="icone-link">
+                <img src="img/docentes.png" alt="Docentes">
+            </div>
+            <a class="link-texto-outros" href="docentes.php">Docentes da Área Técnica</a>
+        </div>
+        <div class="link-outros link-2">
+            <div class="icone-link">
+                <img src="img/destaques.png" alt="Destaques">
+            </div>
+            <a class="link-texto-outros" href="destaques.php">Destaques</a>
+        </div>
+        <div class="link-outros link-3">
+            <div class="icone-link">
+                <img src="img/disciplinas.png" alt="Disciplinas">
+            </div>
+           <a class="link-texto-outros" href="disciplinas.php">Disciplinas Técnicas</a>
+        </div>
+    </div>
     <?php 
     $conexao = mysqli_connect("localhost", "root", "", "conhecendoinformatica");
     $query = "SELECT ano FROM disciplinas GROUP BY ano";

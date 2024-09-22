@@ -99,6 +99,26 @@
                 button.value = id+"-true";
             }
         }
+
+        function movLink(mov) {
+            if(mov == 'passar') {
+                var pos = document.querySelector('.passar-link').id;
+                var prox_anterior = (parseInt(pos)+1)%4;
+            } else if(mov == 'voltar') {
+                var pos = document.querySelector('.voltar-link').id;
+                var prox_anterior = (parseInt(pos)+3)%4;
+            }
+            for(j=0;j<4;j++) {
+                if(j != prox_anterior) {
+                    document.querySelector(".link-"+j).style.display = 'none';
+                } else {
+                    document.querySelector(".link-"+prox_anterior).style.display = 'flex';
+                }
+            }
+            document.querySelector('.passar-link').id = prox_anterior;
+            document.querySelector('.voltar-link').id = prox_anterior;
+        }
+
     </script>
     <a href="index.php"><img src="img/logo.png" alt="Logo" class="logo"></a>
     <div class="banner-outros">
@@ -108,30 +128,33 @@
         </div>
     </div>
     <div id="links-index">
-        <div class="link-outros">
+        <span class="voltar-link" id="0" onclick ="movLink('voltar')"><</span>
+        <span class="passar-link" id="0" onclick ="movLink('passar')">></span>
+        <div class="link-outros link-0">
             <div class="icone-link">
                 <img src="img/projetos.png" alt="Projetos">
             </div>
             <a class="link-texto-outros" href="projetos.php">Projetos</a>
+        </div>
+        <div class="link-outros link-1">
+            <div class="icone-link">
+                <img src="img/docentes.png" alt="Docentes">
             </div>
-            <div class="link-outros">
-                <div class="icone-link">
-                    <img src="img/docentes.png" alt="Docentes">
-                </div>
             <a class="link-texto-outros" href="docentes.php">Docentes da Área Técnica</a>
+        </div>
+        <div class="link-outros link-2">
+            <div class="icone-link">
+                <img src="img/destaques.png" alt="Destaques">
             </div>
-            <div class="link-outros">
-                <div class="icone-link">
-                    <img src="img/destaques.png" alt="Destaques">
-                </div>
             <a class="link-texto-outros" href="destaques.php">Destaques</a>
+        </div>
+        <div class="link-outros link-3">
+            <div class="icone-link">
+                <img src="img/disciplinas.png" alt="Disciplinas">
             </div>
-            <div class="link-outros">
-                <div class="icone-link">
-                    <img src="img/disciplinas.png" alt="Disciplinas">
-                </div>
            <a class="link-texto-outros" href="disciplinas.php">Disciplinas Técnicas</a>
         </div>
+    </div>
     </div>
     <?php 
     $query = "SELECT count(*) as quantidade FROM projetos";
