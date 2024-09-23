@@ -109,7 +109,13 @@ body {
     padding: 0.8rem;
 }
 
-
+#curtida {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.4rem;
+}
 
 /* bg-white h-[16rem] w-[14rem] flex flex-col items-center p-3 */
 
@@ -124,7 +130,6 @@ body {
     border-radius: 0.3rem;
     gap: 2rem;
     flex-wrap: wrap;
-    gap: 2rem;
 }
 
 .link-outros {
@@ -138,7 +143,6 @@ body {
     border-radius: 0.3rem;
     gap: 2rem;
     flex-wrap: wrap;
-    gap: 2rem;
 }
 
 .icone-link {
@@ -392,6 +396,8 @@ body {
     gap: 1rem;
 }
 
+
+
 .linha-disciplina{
     width: 1px;
     background-color: black;
@@ -465,6 +471,11 @@ body {
     border: 0;
     cursor: pointer;
 }
+
+.voltar-link, .passar-link{
+    display: none;
+}
+
 @keyframes tira{
     from{
         opacity: 100%;
@@ -557,8 +568,6 @@ body {
 
     .links-index {
         position: relative;
-        left: 0;
-        top: 0;
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -589,34 +598,27 @@ body {
 
     .voltar-link{
         position: absolute;
-        color: white;
+        color: black;
         z-index: 10;
         font-size: 2.5rem;
         font-weight: 100;
-        left: 1%;
+        left: 2%;
         cursor: pointer;
+        top: 40%;
+        display: block;
     }
     .passar-link{
         position: absolute;
         
-        right: 1%;
-        color: white;
+        right: 2%;
+        color: black;
         z-index: 10;
         font-size: 2.5rem;
         font-weight: 100;
         cursor: pointer;
+        top: 40%;
+        display: block;
     }
-
-    .voltar-link, .passar-link {
-        position: absolute;
-        display: flex;
-        justify-content: space-between;
-    }
-    
-}
-
-.voltar-link, .passar-link{
-    display: none;
 }
 
 

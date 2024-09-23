@@ -128,27 +128,33 @@
         </div>
     </div>
     <div id="links-index">
+        <div class="link-outros link-0">
         <span class="voltar-link" id="0" onclick ="movLink('voltar')"><</span>
         <span class="passar-link" id="0" onclick ="movLink('passar')">></span>
-        <div class="link-outros link-0">
             <div class="icone-link">
                 <img src="img/projetos.png" alt="Projetos">
             </div>
             <a class="link-texto-outros" href="projetos.php">Projetos</a>
         </div>
         <div class="link-outros link-1">
+        <span class="voltar-link" id="0" onclick ="movLink('voltar')"><</span>
+        <span class="passar-link" id="0" onclick ="movLink('passar')">></span>
             <div class="icone-link">
                 <img src="img/docentes.png" alt="Docentes">
             </div>
-            <a class="link-texto-outros" href="docentes.php">Docentes da Área Técnica</a>
+            <a class="link-texto-outros" href="docentes.php">Docentes Área Técnica</a>
         </div>
         <div class="link-outros link-2">
+        <span class="voltar-link" id="0" onclick ="movLink('voltar')"><</span>
+        <span class="passar-link" id="0" onclick ="movLink('passar')">></span>
             <div class="icone-link">
                 <img src="img/destaques.png" alt="Destaques">
             </div>
             <a class="link-texto-outros" href="destaques.php">Destaques</a>
         </div>
         <div class="link-outros link-3">
+        <span class="voltar-link" id="0" onclick ="movLink('voltar')"><</span>
+        <span class="passar-link" id="0" onclick ="movLink('passar')">></span>
             <div class="icone-link">
                 <img src="img/disciplinas.png" alt="Disciplinas">
             </div>
@@ -248,13 +254,20 @@
                 }
             ?>
             </span>
-            <span class="projeto-ano">Ano:<?=$linha['ano_escolar']?>º ano/<?=$linha['ano']?></span>
-            <form action="update.php" method="post">
+            <span class="projeto-ano">Ano: <?=$linha['ano_escolar']?>º ano/<?=$linha['ano']?></span>
+            <?php 
+                if($linha['link']!=''){
+            ?>
+            <a href="<?=$linha['link']?>">Clique aqui para acessar o projeto</a>
+            <?php
+                }
+            ?>
+            <form action="update.php" method="post" id="curtida">
                 <input type="hidden" name="pagina" value="<?=$pagina?>">
                 <button type="submit" class="coracao-<?php if($c%2 == 0){ echo '0';}else{ echo '1';}?>" onclick="guardaLocalStorage(<?=$linha['id']?>)" name="id_votos" id="button-<?=$linha['id']?>">
                     <canvas id="canvas<?=$linha['id']?>" width="50" height="50"></canvas>
-                    <span><?=$linha['votos']?></span>
                 </button>
+                <span><?=$linha['votos']?></span>
             </form>
             <script>
                 if(localStorage.getItem("projeto-<?=$linha['id']?>") == "true"){

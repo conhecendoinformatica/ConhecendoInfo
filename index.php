@@ -36,9 +36,9 @@
         </div>
        
         <div id="links-index">
-            <span class="voltar-link" id="0" onclick ="movLink('voltar')"><</span>
-            <span class="passar-link" id="0" onclick ="movLink('passar')">></span>
             <div class="link-index link-0">
+                <span class="voltar-link" id="0" onclick ="movLink('voltar')"><</span>
+                <span class="passar-link" id="0" onclick ="movLink('passar')">></span>
                 <div class="icone-link">
                     <img src="img/projetos.png" alt="Projetos">
                 </div>
@@ -53,10 +53,12 @@
             <!-- <span class="voltar-link voltar-link2" onclick ="voltarLink('link-1')"><</span>
             <span class="passar-link passar-link2" onclick ="passarLink('link-1')">></span> -->
             <div class="link-index link-1">
+            <span class="voltar-link" id="0" onclick ="movLink('voltar')"><</span>
+            <span class="passar-link" id="0" onclick ="movLink('passar')">></span>
             <div class="icone-link">
                     <img src="img/docentes.png" alt="Docentes">
                 </div>
-                <span class="link-texto">Docentes da Área Técnica</span>
+                <span class="link-texto">Docentes Área Técnica</span>
                 <span class="link-texto2">
                     Conheça os profissionais que tornam esse curso possível
                 </span>
@@ -65,6 +67,8 @@
                 </form>
             </div>
             <div class="link-index link-2">
+            <span class="voltar-link" id="0" onclick ="movLink('voltar')"><</span>
+            <span class="passar-link" id="0" onclick ="movLink('passar')">></span>
                 <div class="icone-link">
                     <img src="img/destaques.png" alt="Destaques">
                 </div>
@@ -77,6 +81,8 @@
                 </form>
             </div>
             <div class="link-index link-3">
+            <span class="voltar-link" id="0" onclick ="movLink('voltar')"><</span>
+            <span class="passar-link" id="0" onclick ="movLink('passar')">></span>
                 <div class="icone-link">
                     <img src="img/disciplinas.png" alt="Disciplinas">
                 </div>

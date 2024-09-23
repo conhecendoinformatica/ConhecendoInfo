@@ -35,27 +35,33 @@
         </div>
     </div>
     <div id="links-index">
+        <div class="link-outros link-0">
         <span class="voltar-link" id="0" onclick ="movLink('voltar')"><</span>
         <span class="passar-link" id="0" onclick ="movLink('passar')">></span>
-        <div class="link-outros link-0">
             <div class="icone-link">
                 <img src="img/projetos.png" alt="Projetos">
             </div>
             <a class="link-texto-outros" href="projetos.php">Projetos</a>
         </div>
         <div class="link-outros link-1">
+        <span class="voltar-link" id="0" onclick ="movLink('voltar')"><</span>
+        <span class="passar-link" id="0" onclick ="movLink('passar')">></span>
             <div class="icone-link">
                 <img src="img/docentes.png" alt="Docentes">
             </div>
-            <a class="link-texto-outros" href="docentes.php">Docentes da Área Técnica</a>
+            <a class="link-texto-outros" href="docentes.php">Docentes Área Técnica</a>
         </div>
         <div class="link-outros link-2">
+        <span class="voltar-link" id="0" onclick ="movLink('voltar')"><</span>
+        <span class="passar-link" id="0" onclick ="movLink('passar')">></span>
             <div class="icone-link">
                 <img src="img/destaques.png" alt="Destaques">
             </div>
             <a class="link-texto-outros" href="destaques.php">Destaques</a>
         </div>
         <div class="link-outros link-3">
+        <span class="voltar-link" id="0" onclick ="movLink('voltar')"><</span>
+        <span class="passar-link" id="0" onclick ="movLink('passar')">></span>
             <div class="icone-link">
                 <img src="img/disciplinas.png" alt="Disciplinas">
             </div>
@@ -91,7 +97,6 @@
             <span class="docente-titulo">Olá, meu nome é <?=$linha['nome']?></span>
             <span class="docente-descricao"><?=$linha['descricao']?></span>
         </div>
-        <canvas id="canvas" width="50"></canvas>
         <?php 
             if(!($c%2 == 0)){
         ?>
