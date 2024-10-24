@@ -59,7 +59,7 @@
         }   
 
     </script>
-    <a href="index.php"><img src="img/logo.png" alt="Logo" class="logo"></a>
+    <a href="https://conhecendo-info.vercel.app/api/index.php"><img src="https://conhecendo-info.vercel.app/api/img/logo.png" alt="Logo" class="logo"></a>
     <div class="banner-outros">
         <div class="titulo-banner-div">
             <span class="subtitulo-banner">Sucesso e Prestígio</span>
@@ -71,7 +71,7 @@
         <span class="voltar-link" id="0" onclick ="movLink('voltar')"><</span>
         <span class="passar-link" id="0" onclick ="movLink('passar')">></span>
             <div class="icone-link">
-                <img src="img/projetos.png" alt="Projetos">
+                <img src="https://conhecendo-info.vercel.app/api/img/projetos.png" alt="Projetos">
             </div>
             <a class="link-texto-outros" href="projetos.php">Projetos</a>
         </div>
@@ -79,23 +79,23 @@
         <span class="voltar-link" id="0" onclick ="movLink('voltar')"><</span>
         <span class="passar-link" id="0" onclick ="movLink('passar')">></span>
             <div class="icone-link">
-                <img src="img/docentes.png" alt="Docentes">
+                <img src="https://conhecendo-info.vercel.app/api/img/docentes.png" alt="Docentes">
             </div>
-            <a class="link-texto-outros" href="docentes.php">Docentes Área Técnica</a>
+            <a class="link-texto-outros" href="https://conhecendo-info.vercel.app/api/docentes.php">Docentes Área Técnica</a>
         </div>
         <div class="link-outros link-2">
         <span class="voltar-link" id="0" onclick ="movLink('voltar')"><</span>
         <span class="passar-link" id="0" onclick ="movLink('passar')">></span>
             <div class="icone-link">
-                <img src="img/destaques.png" alt="Destaques">
+                <img src="https://conhecendo-info.vercel.app/api/img/destaques.png" alt="Destaques">
             </div>
-            <a class="link-texto-outros" href="destaques.php">Destaques</a>
+            <a class="link-texto-outros" href="https://conhecendo-info.vercel.app/api/destaques.php">Destaques</a>
         </div>
         <div class="link-outros link-3">
         <span class="voltar-link" id="0" onclick ="movLink('voltar')"><</span>
         <span class="passar-link" id="0" onclick ="movLink('passar')">></span>
             <div class="icone-link">
-                <img src="img/disciplinas.png" alt="Disciplinas">
+                <img src="https://conhecendo-info.vercel.app/api/img/disciplinas.png" alt="Disciplinas">
             </div>
            <a class="link-texto-outros" href="disciplinas.php">Disciplinas Técnicas</a>
         </div>
@@ -130,7 +130,7 @@
                     $i = 0;
                     while($arquivo = mysqli_fetch_array($resultado, MYSQLI_ASSOC)){
                 ?>
-                <img src="uploads/<?=$arquivo['endereco']?>" id="img<?=$c?><?=$i?>" class="img<?=$c?> destaque-foto"<?php if($i==0){echo "style='opacity:100%;'";}else{echo "style='opacity:0%;'";}?>>
+                <img src="https://conhecendo-info.vercel.app/api/uploads/<?=$arquivo['endereco']?>" id="img<?=$c?><?=$i?>" class="img<?=$c?> destaque-foto"<?php if($i==0){echo "style='opacity:100%;'";}else{echo "style='opacity:0%;'";}?>>
                 <?php 
                         $i++;
                     }
@@ -173,33 +173,33 @@
         <?php 
             if($pagina>3){
         ?>
-        <form action="destaques.php" method="post">
+        <form action="https://conhecendo-info.vercel.app/api/destaques.php" method="post">
             <button class="seta-paginas-btt" value="<?php echo $pagina-3?>" name="pagina" type="submit"><<</button>
         </form>
         <?php
             }
             if($pagina>0){
         ?>
-        <form action="destaques.php" method="post">
+        <form action="https://conhecendo-info.vercel.app/api/destaques.php" method="post">
             <button class="seta-paginas-btt" value="<?php echo $pagina-1?>" name="pagina" type="submit"><</button>
         </form>
         <?php
             }
         ?>
-        <form action="destaques.php" method="post">
+        <form action="https://conhecendo-info.vercel.app/api/destaques.php" method="post">
             <button class="numero-paginas-btt" value="<?php echo $pagina?>" name="pagina" type="submit"><?php echo $pagina+1?></button>
         </form>
         <?php 
             if($npaginas-$pagina>1){
         ?>
-        <form action="destaques.php" method="post">
+        <form action="https://conhecendo-info.vercel.app/api/destaques.php" method="post">
             <button class="seta-paginas-btt" value="<?php echo $pagina+1?>" name="pagina" type="submit">></button>
         </form>
         <?php
             }
             if($npaginas-$pagina>3){
         ?>
-        <form action="destaques.php" method="post">
+        <form action="https://conhecendo-info.vercel.app/api/destaques.php" method="post">
             <button class="seta-paginas-btt" value="<?php echo $pagina+3?>" name="pagina" type="submit">>></button>
         </form>
         <?php
@@ -207,7 +207,7 @@
         ?>
     </div>
     <footer id="rodape">
-        <img src="img/logo_ifrs.png" alt="">
+        <img src="https://conhecendo-info.vercel.app/api/img/logo_ifrs.png" alt="">
         <div class="informacao-rodape">
             <span class="titulo-rodape">Comunicação</span>
             <div class="informacoes-rodape">

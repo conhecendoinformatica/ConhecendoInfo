@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://conhecendo-info.vercel.app/api/style.css">
 </head>
 <body>
     <script>
@@ -27,7 +27,7 @@
         }
     </script>
     <div>
-        <a href="index.php"><img src="img/logo.png" alt="Logo" class="logo"></a>
+        <a href="https://conhecendo-info.vercel.app/api/index.php"><img src="https://conhecendo-info.vercel.app/api/img/logo.png" alt="Logo" class="logo"></a>
         <div class="banner-index">
             <div class="titulo-banner-div">
                 <span class="subtitulo-banner">Conhecendo o curso de</span>
@@ -40,13 +40,13 @@
                 <span class="voltar-link" id="0" onclick ="movLink('voltar')"><</span>
                 <span class="passar-link" id="0" onclick ="movLink('passar')">></span>
                 <div class="icone-link">
-                    <img src="img/projetos.png" alt="Projetos">
+                    <img src="https://conhecendo-info.vercel.app/api/img/projetos.png" alt="Projetos">
                 </div>
                 <span class="link-texto">Projetos</span>
                 <span class="link-texto2">
                     Veja a produção científica do curso através de projetos dos estudantes
                 </span>
-                <form action="projetos.php">
+                <form action="https://conhecendo-info.vercel.app/api/projetos.php">
                     <button class="botao-index" type="submit">Saiba mais</button>
                 </form>
             </div>
@@ -56,13 +56,13 @@
             <span class="voltar-link" id="0" onclick ="movLink('voltar')"><</span>
             <span class="passar-link" id="0" onclick ="movLink('passar')">></span>
             <div class="icone-link">
-                    <img src="img/docentes.png" alt="Docentes">
+                    <img src="https://conhecendo-info.vercel.app/api/img/docentes.png" alt="Docentes">
                 </div>
                 <span class="link-texto">Docentes Área Técnica</span>
                 <span class="link-texto2">
                     Conheça os profissionais que tornam esse curso possível
                 </span>
-                <form action="docentes.php">
+                <form action="https://conhecendo-info.vercel.app/api/docentes.php">
                     <button class="botao-index" type="submit">Saiba mais</button>
                 </form>
             </div>
@@ -70,13 +70,13 @@
             <span class="voltar-link" id="0" onclick ="movLink('voltar')"><</span>
             <span class="passar-link" id="0" onclick ="movLink('passar')">></span>
                 <div class="icone-link">
-                    <img src="img/destaques.png" alt="Destaques">
+                    <img src="https://conhecendo-info.vercel.app/api/img/destaques.png" alt="Destaques">
                 </div>
                 <span class="link-texto">Destaques</span>
                 <span class="link-texto2">
                     Veja os alunos de informática que se destacaram durante a sua trajetória no IFRS
                 </span>
-                <form action="destaques.php">
+                <form action="https://conhecendo-info.vercel.app/api/destaques.php">
                     <button class="botao-index" type="submit">Saiba mais</button>
                 </form>
             </div>
@@ -84,13 +84,13 @@
             <span class="voltar-link" id="0" onclick ="movLink('voltar')"><</span>
             <span class="passar-link" id="0" onclick ="movLink('passar')">></span>
                 <div class="icone-link">
-                    <img src="img/disciplinas.png" alt="Disciplinas">
+                    <img src="https://conhecendo-info.vercel.app/api/img/disciplinas.png" alt="Disciplinas">
                 </div>
                 <span class="link-texto">Disciplinas Técnicas</span>
                 <span class="link-texto2">
                     Descubra tudo que você vai aprender ao decorrer destes quatro anos
                 </span>
-                <form action="disciplinas.php">
+                <form action="https://conhecendo-info.vercel.app/api/disciplinas.php">
                     <button class="botao-index" type="submit">Saiba mais</button>
                 </form>
             </div>
@@ -153,7 +153,7 @@
     </div>
     </div>
     <footer id="rodape">
-        <img src="img/logo_ifrs.png" alt="">
+        <img src="https://conhecendo-info.vercel.app/api/img/logo_ifrs.png" alt="">
         <div class="informacao-rodape">
             <span class="titulo-rodape">Comunicação</span>
             <div class="informacoes-rodape">
