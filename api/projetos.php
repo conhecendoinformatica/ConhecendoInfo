@@ -8,7 +8,7 @@
 </head>
 <body>
     <?php 
-        $conexao = mysqli_connect("localhost", "root", "", "conhecendoinformatica");
+        $conexao = mysqli_connect("ep-icy-mountain-a4z390r0-pooler.us-east-1.aws.neon.tech", "default", "92DyqdeouPBl", "verceldb");
         if(isset($_POST['id_votos'])){
             $id = explode("-",$_POST['id_votos'])[0];
             $tof = explode("-",$_POST['id_votos'])[1];
