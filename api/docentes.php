@@ -69,7 +69,7 @@
         </div>
     </div>
     <?php 
-    $conexao = pg_connect("host=ep-icy-mountain-a4z390r0-pooler.us-east-1.aws.neon.tech dbname=verceldb user=default password=92DyqdeouPBl");;
+    $conexao = pg_connect("host=ep-icy-mountain-a4z390r0-pooler.us-east-1.aws.neon.tech dbname=verceldb user=default password=92DyqdeouPBl");
     $query = "SELECT count(*) as quantidade FROM membros WHERE cargo = 'docente'";
     $result = pg_query($conexao,$query);
     $linha = pg_fetch_array($result, PGSQL_ASSOC);
@@ -81,9 +81,9 @@
         $pagina = 0;
     }
     $query = "SELECT membros.nome as nome, membros.descricao as descricao, arquivos.endereco as endereco FROM membros JOIN membro_arquivo ON membro_arquivo.membro = membros.id JOIN arquivos ON membro_arquivo.arquivo = arquivos.id WHERE membros.cargo = 'docente' LIMIT 5 OFFSET ".($pagina*5);
-    $result = mysqli_query($conexao,$query);
+    $result = pg_query($conexao,$query);
     $c = 0;
-    while($linha = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+    while($linha = pg_fetch_array($result, PGSQL_ASSOC)){
     ?>
     <div class="docente docente-<?php if($c%2 == 0){ echo '0';}else{ echo '1';}?>">
         <?php 
