@@ -69,10 +69,10 @@
         </div>
     </div>
     <?php 
-    $conexao = mysqli_connect("ep-icy-mountain-a4z390r0-pooler.us-east-1.aws.neon.tech", "default", "92DyqdeouPBl", "verceldb");;
+    $conexao = pg_connect("ep-icy-mountain-a4z390r0-pooler.us-east-1.aws.neon.tech", "default", "92DyqdeouPBl", "verceldb");;
     $query = "SELECT count(*) as quantidade FROM membros WHERE cargo = 'docente'";
-    $result = mysqli_query($conexao,$query);
-    $linha = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    $result = pg_query($conexao,$query);
+    $linha = pg_fetch_array($result, PGSQL_ASSOC);
     $npaginas = ceil(intval($linha['quantidade'])/5);
     if(isset($_POST['pagina'])){
         $pagina = $_POST['pagina'];
