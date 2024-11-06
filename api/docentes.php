@@ -69,7 +69,7 @@
         </div>
     </div>
     <?php 
-    $conexao = mysqli_connect("ep-icy-mountain-a4z390r0-pooler.us-east-1.aws.neon.tech", "", "92DyqdeouPBl", "verceldb");;
+    $conexao = mysqli_connect("ep-icy-mountain-a4z390r0-pooler.us-east-1.aws.neon.tech", "conhecendoinformatica", "92DyqdeouPBl", "verceldb");;
     $query = "SELECT count(*) as quantidade FROM membros WHERE cargo = 'docente'";
     $result = mysqli_query($conexao,$query);
     $linha = mysqli_fetch_array($result, MYSQLI_ASSOC);
