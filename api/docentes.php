@@ -69,7 +69,7 @@
         </div>
     </div>
     <?php 
-    $conexao = pg_connect("host=postgres://default:************@ep-icy-mountain-a4z390r0.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require dbname=verceldb user=default password=92DyqdeouPBl");;
+    $conexao = pg_connect("host=ep-icy-mountain-a4z390r0-pooler.us-east-1.aws.neon.tech dbname=verceldb user=default password=92DyqdeouPBl");;
     $query = "SELECT count(*) as quantidade FROM membros WHERE cargo = 'docente'";
     $result = pg_query($conexao,$query);
     $linha = pg_fetch_array($result, PGSQL_ASSOC);
