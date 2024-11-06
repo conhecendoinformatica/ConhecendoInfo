@@ -46,42 +46,42 @@ create table usuario(
     primary key(id)
 );
 
-create table projetos_membros(
+create table projeto_membro(
     projeto integer,
     membro integer,
-    foreign key(`projeto`) references `projetos`(`id`),
-    foreign key(`membro`) references `membros`(`id`),
+    foreign key(projeto) references projetos(id),
+    foreign key(membro) references membros(id),
     primary key(projeto,membro)
 );
 
-create table projetos_arquivos(
+create table projeto_arquivo(
     projeto integer,
     arquivo integer,
-    foreign key(`projeto`) references `projetos`(`id`),
-    foreign key(`arquivo`) references `arquivos`(`id`),
+    foreign key(projeto) references projetos(id),
+    foreign key(arquivo) references arquivos(id),
     primary key(projeto,arquivo)
 );
 
-create table projetos_disciplinas(
+create table projeto_disciplina(
     projeto integer,
     disciplina integer,
-    foreign key(`projeto`) references `projetos`(`id`),
-    foreign key(`disciplina`) references `disciplinas`(`id`),
+    foreign key(projeto) references projetos(id),
+    foreign key(disciplina) references disciplinas(id),
     primary key(projeto,disciplina)
 );
 
-create table destaques_arquivos(
+create table destaque_arquivo(
     destaque integer,
     arquivo integer,
-    foreign key(`destaque`) references `destaques`(`id`),
-    foreign key(`arquivo`) references `arquivos`(`id`),
+    foreign key(destaque) references destaques(id),
+    foreign key(arquivo) references arquivos(id),
     primary key(destaque,arquivo)
 );
 
-create table membros_arquivos(
+create table membro_arquivo(
     membro integer,
     arquivo integer,
-    foreign key(`membro`) references `membros`(`id`),
-    foreign key(`arquivo`) references `arquivos`(`id`),
+    foreign key(membro) references membros(id),
+    foreign key(arquivo) references arquivos(id),
     primary key(membro,arquivo)
 );
