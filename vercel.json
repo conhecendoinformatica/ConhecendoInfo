@@ -6,5 +6,13 @@
   },
   "routes": [
     { "src": "/",  "dest": "/api/index.php" },
-    { "src": "css/style.css", "dest": "/css/style.css" }]
+    { "src": "css/style.css", "dest": "/css/style.css" }],
+  "env": {
+    "PG_HOST": "ep-icy-mountain-a4z390r0-pooler.us-east-1.aws.neon.tech",
+    "PG_PORT": "5432",
+    "PG_DB": "verceldb",
+    "PG_USER": "default",
+    "PG_PASSWORD": "92DyqdeouPBl",
+    "PG_ENDPOINT": "ep-icy-mountain-a4z390r0-pooler.us-east-1.aws.neon.tech"
+  }
 }
